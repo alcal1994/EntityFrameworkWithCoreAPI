@@ -62,7 +62,7 @@ namespace EntityFrameworkWithCoreAPI.Controllers
             user.Password = Password.hashPassword(user.Password);
 
             _context.User.Add(user);
-            _context.SaveChangesAsync();
+            await _context.SaveChangesAsync();
 
             return Ok("User has been successfully registered.");
         }
