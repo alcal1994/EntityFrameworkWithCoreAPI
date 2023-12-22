@@ -16,7 +16,7 @@ namespace EntityFrameworkWithCoreAPI.Controllers
             _context = context;
         }
 
-        [Authorize]
+        [Authorize(Roles = "Admin")]
         [HttpGet(Name = "GetProduct")]
         public List<Product> Get()
         {
